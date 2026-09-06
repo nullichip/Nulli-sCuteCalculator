@@ -1,0 +1,375 @@
+[gd_scene load_steps=29 format=3 uid="uid://c84qkujpijtnk"]
+
+[ext_resource type="Texture2D" uid="uid://cfx2nimdsi0fd" path="res://Calc Assets/Base.png" id="1_6dpbg"]
+[ext_resource type="Script" uid="uid://c13h744n8mneb" path="res://scripts/calc.gd" id="1_bhjd5"]
+[ext_resource type="Texture2D" uid="uid://bjn5klf8fwnwr" path="res://Calc Assets/Screen.png" id="3_050ol"]
+[ext_resource type="Texture2D" uid="uid://c4gihvyvwjnk2" path="res://Calc Assets/1.png" id="4_vu1ap"]
+[ext_resource type="Texture2D" uid="uid://2ab8dx45w10y" path="res://Calc Assets/2.png" id="5_03h7c"]
+[ext_resource type="Texture2D" uid="uid://b6qpphhjqf8ro" path="res://Calc Assets/BtnDown.png" id="5_050ol"]
+[ext_resource type="Texture2D" uid="uid://d15apbbs5g7w8" path="res://Calc Assets/3.png" id="6_b811f"]
+[ext_resource type="Texture2D" uid="uid://b0422bfpc5kd3" path="res://Calc Assets/4.png" id="7_68q0n"]
+[ext_resource type="Texture2D" uid="uid://ded2vvyl12ogq" path="res://Calc Assets/5.png" id="8_skn22"]
+[ext_resource type="Texture2D" uid="uid://dbutogt3jvi2t" path="res://Calc Assets/6.png" id="9_tg61m"]
+[ext_resource type="Texture2D" uid="uid://c4g7a0io8qaxp" path="res://Calc Assets/7.png" id="10_xqdc3"]
+[ext_resource type="Texture2D" uid="uid://drvigt8f1ufoi" path="res://Calc Assets/8.png" id="11_qm11l"]
+[ext_resource type="Texture2D" uid="uid://hv2qxr714yhf" path="res://Calc Assets/9.png" id="12_o5o2v"]
+[ext_resource type="Texture2D" uid="uid://djb4popr8ctoy" path="res://Calc Assets/O.png" id="13_pp8wr"]
+[ext_resource type="Texture2D" uid="uid://bvdua7sxbutco" path="res://Calc Assets/-.png" id="14_2801m"]
+[ext_resource type="Texture2D" uid="uid://rlhqi2djh0rk" path="res://Calc Assets/add.png" id="15_8cg7y"]
+[ext_resource type="Texture2D" uid="uid://cfs72d5bw5vxg" path="res://Calc Assets/mult.png" id="17_kvyir"]
+[ext_resource type="Texture2D" uid="uid://c3trlisbmmuvs" path="res://Calc Assets/div.png" id="18_ey6q2"]
+[ext_resource type="Texture2D" uid="uid://dwqpedp1stg6n" path="res://Calc Assets/parenthesis.png" id="19_p3rr4"]
+[ext_resource type="Texture2D" uid="uid://fvqpnd7pe81a" path="res://Calc Assets/decimal.png" id="20_lg5hg"]
+[ext_resource type="Texture2D" uid="uid://cjload1h1a8em" path="res://Calc Assets/=.png" id="21_bocuy"]
+[ext_resource type="Texture2D" uid="uid://crhm5elhm6qai" path="res://Calc Assets/on& off.png" id="22_050ol"]
+[ext_resource type="Texture2D" uid="uid://rssdhuf27oq5" path="res://Calc Assets/C.png" id="22_fmorw"]
+[ext_resource type="Texture2D" uid="uid://ch4edmuivwfel" path="res://Calc Assets/CAp.png" id="24_vu1ap"]
+
+[sub_resource type="Animation" id="Animation_vu1ap"]
+resource_name = "cap-off"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.73333335, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0, 767)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10833333, 0.20833333, 0.31, 0.41, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0052359877, -0.0052359877, 0.0052359877, -0.0052359877, 0.0052359877, -0.0052359877, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_03h7c"]
+resource_name = "cap-on"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.73333335, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 771), Vector2(0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.40000004, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0052359877, -0.0052359877, 0.0052359877, -0.0052359877, 0.0052359877, -0.0052359877, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_b811f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0052359877]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_68q0n"]
+_data = {
+&"RESET": SubResource("Animation_b811f"),
+&"cap-off": SubResource("Animation_vu1ap"),
+&"cap-on": SubResource("Animation_03h7c")
+}
+
+[node name="Calculator" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bhjd5")
+
+[node name="BaseCalc" type="Node2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="Base" type="TextureRect" parent="BaseCalc"]
+texture_filter = 1
+offset_top = -1.0
+offset_right = 54.0
+offset_bottom = 92.0
+scale = Vector2(8, 8)
+mouse_filter = 0
+texture = ExtResource("1_6dpbg")
+
+[node name="Screen" type="Sprite2D" parent="BaseCalc"]
+texture_filter = 1
+position = Vector2(216, 126)
+scale = Vector2(8, 8.190476)
+texture = ExtResource("3_050ol")
+
+[node name="BTN1" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 32.0
+offset_top = 280.0
+offset_right = 46.0
+offset_bottom = 290.0
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("4_vu1ap")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTN2" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 128.0
+offset_top = 280.5
+offset_right = 142.0
+offset_bottom = 290.5
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("5_03h7c")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTN3" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 226.0
+offset_top = 281.0
+offset_right = 240.0
+offset_bottom = 291.0
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("6_b811f")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTN4" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 32.0
+offset_top = 352.5
+offset_right = 46.0
+offset_bottom = 362.5
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("7_68q0n")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTN5" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 130.0
+offset_top = 353.0
+offset_right = 144.0
+offset_bottom = 363.0
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("8_skn22")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTN6" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 226.00002
+offset_top = 353.00003
+offset_right = 240.00002
+offset_bottom = 363.00003
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("9_tg61m")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTN7" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 32.0
+offset_top = 424.5
+offset_right = 46.0
+offset_bottom = 434.5
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("10_xqdc3")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTN8" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 128.0
+offset_top = 425.00003
+offset_right = 143.0
+offset_bottom = 435.00003
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("11_qm11l")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTN9" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 226.0
+offset_top = 424.00003
+offset_right = 240.0
+offset_bottom = 434.00003
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("12_o5o2v")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTN0" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 32.0
+offset_top = 496.49994
+offset_right = 46.0
+offset_bottom = 506.49994
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("13_pp8wr")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTNsub" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 322.50003
+offset_top = 312.0
+offset_right = 336.50003
+offset_bottom = 322.0
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("14_2801m")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTNadd" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 322.5
+offset_top = 384.5
+offset_right = 336.5
+offset_bottom = 394.5
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("15_8cg7y")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTNmult" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 322.5
+offset_top = 456.5
+offset_right = 336.5
+offset_bottom = 466.5
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("17_kvyir")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTNdiv" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 322.5
+offset_top = 528.5
+offset_right = 336.5
+offset_bottom = 538.5
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("18_ey6q2")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTNpara" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 128.0
+offset_top = 497.0
+offset_right = 142.0
+offset_bottom = 507.0
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("19_p3rr4")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTNdecimal" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 226.00002
+offset_top = 497.0
+offset_right = 240.00002
+offset_bottom = 507.0
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("20_lg5hg")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTNequal" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 192.00002
+offset_top = 576.00006
+offset_right = 206.00002
+offset_bottom = 586.00006
+scale = Vector2(10, 10)
+texture_normal = ExtResource("21_bocuy")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTNONOFF" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 32.000008
+offset_top = 576.00006
+offset_right = 46.000008
+offset_bottom = 586.00006
+scale = Vector2(10, 10)
+texture_normal = ExtResource("22_050ol")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="BTNC" type="TextureButton" parent="BaseCalc"]
+texture_filter = 1
+offset_left = 323.0
+offset_top = 240.0
+offset_right = 337.0
+offset_bottom = 250.0
+scale = Vector2(6.5, 6.5)
+texture_normal = ExtResource("22_fmorw")
+texture_pressed = ExtResource("5_050ol")
+
+[node name="CapCalc" type="TextureRect" parent="."]
+layout_mode = 0
+rotation = 0.0052359877
+
+[node name="CAp" type="TextureButton" parent="CapCalc"]
+texture_filter = 1
+layout_mode = 0
+offset_top = 1.0
+offset_right = 54.0
+offset_bottom = 94.00055
+scale = Vector2(8, 8)
+texture_normal = ExtResource("24_vu1ap")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CapCalc/CAp")
+libraries = {
+&"": SubResource("AnimationLibrary_68q0n")
+}
+
+[connection signal="gui_input" from="BaseCalc/Base" to="." method="_on_base_gui_input"]
+[connection signal="pressed" from="BaseCalc/BTN1" to="." method="_on_btn_1_pressed"]
+[connection signal="pressed" from="BaseCalc/BTN2" to="." method="_on_btn_2_pressed"]
+[connection signal="pressed" from="BaseCalc/BTN3" to="." method="_on_btn_3_pressed"]
+[connection signal="pressed" from="BaseCalc/BTN4" to="." method="_on_btn_4_pressed"]
+[connection signal="pressed" from="BaseCalc/BTN5" to="." method="_on_btn_5_pressed"]
+[connection signal="pressed" from="BaseCalc/BTN6" to="." method="_on_btn_6_pressed"]
+[connection signal="pressed" from="BaseCalc/BTN7" to="." method="_on_btn_7_pressed"]
+[connection signal="pressed" from="BaseCalc/BTN8" to="." method="_on_btn_8_pressed"]
+[connection signal="pressed" from="BaseCalc/BTN9" to="." method="_on_btn_9_pressed"]
+[connection signal="pressed" from="BaseCalc/BTN0" to="." method="_on_btn_0_pressed"]
+[connection signal="pressed" from="BaseCalc/BTNsub" to="." method="_on_bt_nsub_pressed"]
+[connection signal="pressed" from="BaseCalc/BTNadd" to="." method="_on_bt_nadd_pressed"]
+[connection signal="pressed" from="BaseCalc/BTNmult" to="." method="_on_bt_nmult_pressed"]
+[connection signal="pressed" from="BaseCalc/BTNdiv" to="." method="_on_bt_ndiv_pressed"]
+[connection signal="pressed" from="BaseCalc/BTNpara" to="." method="_on_bt_npara_pressed"]
+[connection signal="pressed" from="BaseCalc/BTNdecimal" to="." method="_on_bt_ndecimal_pressed"]
+[connection signal="pressed" from="BaseCalc/BTNequal" to="." method="_on_bt_nequal_pressed"]
+[connection signal="pressed" from="BaseCalc/BTNONOFF" to="." method="_on_btnonoff_pressed"]
+[connection signal="pressed" from="BaseCalc/BTNC" to="." method="_on_btnc_pressed"]
+[connection signal="gui_input" from="CapCalc" to="." method="_on_cap_calc_gui_input"]
+[connection signal="pressed" from="CapCalc/CAp" to="." method="_on_c_ap_pressed"]
