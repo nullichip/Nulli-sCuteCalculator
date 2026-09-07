@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c84qkujpijtnk"]
+[gd_scene load_steps=28 format=3 uid="uid://c84qkujpijtnk"]
 
 [ext_resource type="Texture2D" uid="uid://cfx2nimdsi0fd" path="res://Calc Assets/Base.png" id="1_6dpbg"]
 [ext_resource type="Script" uid="uid://c13h744n8mneb" path="res://scripts/calc.gd" id="1_bhjd5"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://rlhqi2djh0rk" path="res://Calc Assets/add.png" id="15_8cg7y"]
 [ext_resource type="Texture2D" uid="uid://cfs72d5bw5vxg" path="res://Calc Assets/mult.png" id="17_kvyir"]
 [ext_resource type="Texture2D" uid="uid://c3trlisbmmuvs" path="res://Calc Assets/div.png" id="18_ey6q2"]
-[ext_resource type="Texture2D" uid="uid://dwqpedp1stg6n" path="res://Calc Assets/parenthesis.png" id="19_p3rr4"]
 [ext_resource type="Texture2D" uid="uid://fvqpnd7pe81a" path="res://Calc Assets/decimal.png" id="20_lg5hg"]
 [ext_resource type="Texture2D" uid="uid://cjload1h1a8em" path="res://Calc Assets/=.png" id="21_bocuy"]
 [ext_resource type="Texture2D" uid="uid://crhm5elhm6qai" path="res://Calc Assets/on& off.png" id="22_050ol"]
@@ -142,6 +141,15 @@ position = Vector2(216, 126)
 scale = Vector2(8, 8.190476)
 texture = ExtResource("3_050ol")
 
+[node name="HBoxContainer" type="HBoxContainer" parent="BaseCalc"]
+offset_left = 66.0
+offset_top = 87.0
+offset_right = 368.0
+offset_bottom = 161.0
+size_flags_horizontal = 8
+theme_override_constants/separation = 1
+alignment = 2
+
 [node name="BTN1" type="TextureButton" parent="BaseCalc"]
 texture_filter = 1
 offset_left = 32.0
@@ -234,9 +242,9 @@ texture_pressed = ExtResource("5_050ol")
 
 [node name="BTN0" type="TextureButton" parent="BaseCalc"]
 texture_filter = 1
-offset_left = 32.0
+offset_left = 83.0
 offset_top = 496.49994
-offset_right = 46.0
+offset_right = 97.0
 offset_bottom = 506.49994
 scale = Vector2(6.5, 6.5)
 texture_normal = ExtResource("13_pp8wr")
@@ -282,21 +290,11 @@ scale = Vector2(6.5, 6.5)
 texture_normal = ExtResource("18_ey6q2")
 texture_pressed = ExtResource("5_050ol")
 
-[node name="BTNpara" type="TextureButton" parent="BaseCalc"]
-texture_filter = 1
-offset_left = 128.0
-offset_top = 497.0
-offset_right = 142.0
-offset_bottom = 507.0
-scale = Vector2(6.5, 6.5)
-texture_normal = ExtResource("19_p3rr4")
-texture_pressed = ExtResource("5_050ol")
-
 [node name="BTNdecimal" type="TextureButton" parent="BaseCalc"]
 texture_filter = 1
-offset_left = 226.00002
+offset_left = 192.0
 offset_top = 497.0
-offset_right = 240.00002
+offset_right = 206.0
 offset_bottom = 507.0
 scale = Vector2(6.5, 6.5)
 texture_normal = ExtResource("20_lg5hg")
@@ -341,7 +339,7 @@ texture_filter = 1
 layout_mode = 0
 offset_top = 1.0
 offset_right = 54.0
-offset_bottom = 94.00055
+offset_bottom = 94.00061
 scale = Vector2(8, 8)
 texture_normal = ExtResource("24_vu1ap")
 
@@ -366,7 +364,6 @@ libraries = {
 [connection signal="pressed" from="BaseCalc/BTNadd" to="." method="_on_bt_nadd_pressed"]
 [connection signal="pressed" from="BaseCalc/BTNmult" to="." method="_on_bt_nmult_pressed"]
 [connection signal="pressed" from="BaseCalc/BTNdiv" to="." method="_on_bt_ndiv_pressed"]
-[connection signal="pressed" from="BaseCalc/BTNpara" to="." method="_on_bt_npara_pressed"]
 [connection signal="pressed" from="BaseCalc/BTNdecimal" to="." method="_on_bt_ndecimal_pressed"]
 [connection signal="pressed" from="BaseCalc/BTNequal" to="." method="_on_bt_nequal_pressed"]
 [connection signal="pressed" from="BaseCalc/BTNONOFF" to="." method="_on_btnonoff_pressed"]
