@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c84qkujpijtnk"]
+[gd_scene load_steps=36 format=3 uid="uid://c84qkujpijtnk"]
 
 [ext_resource type="Texture2D" uid="uid://cfx2nimdsi0fd" path="res://Calc Assets/Base.png" id="1_6dpbg"]
 [ext_resource type="Script" uid="uid://c13h744n8mneb" path="res://scripts/calc.gd" id="1_bhjd5"]
@@ -28,6 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://cr1rr8mw1qqlt" path="res://Calc Assets/Sticker2.png" id="26_xqdc3"]
 [ext_resource type="Texture2D" uid="uid://deet73c5d3obb" path="res://Calc Assets/Sticker3.png" id="27_qm11l"]
 [ext_resource type="Texture2D" uid="uid://crvcssug5qvxu" path="res://Calc Assets/Sticker4.png" id="28_o5o2v"]
+[ext_resource type="AudioStream" uid="uid://qkqxc6ikeswt" path="res://Calc Assets/typewriter_click.wav" id="29_xqdc3"]
+[ext_resource type="AudioStream" uid="uid://3pxw660wwq6i" path="res://Calc Assets/chime.wav" id="30_qm11l"]
+[ext_resource type="AudioStream" uid="uid://elx8hlh67pv" path="res://Calc Assets/paper_tearing.wav" id="31_qm11l"]
 
 [sub_resource type="Animation" id="Animation_vu1ap"]
 resource_name = "cap-off"
@@ -356,6 +359,9 @@ layout_mode = 0
 rotation = 0.0052359877
 mouse_filter = 2
 
+[node name="PaperSound" type="AudioStreamPlayer2D" parent="CapCalc"]
+stream = ExtResource("31_qm11l")
+
 [node name="CAp" type="TextureButton" parent="CapCalc"]
 texture_filter = 1
 layout_mode = 0
@@ -418,6 +424,17 @@ root_node = NodePath("../CapCalc/CAp")
 libraries = {
 &"": SubResource("AnimationLibrary_68q0n")
 }
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("29_xqdc3")
+
+[node name="PowerOnSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("30_qm11l")
+pitch_scale = 1.55
+
+[node name="PowerOffSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("30_qm11l")
+pitch_scale = 0.71
 
 [connection signal="gui_input" from="BaseCalc/Base" to="." method="_on_base_gui_input"]
 [connection signal="pressed" from="BaseCalc/BTN1" to="." method="_on_btn_1_pressed"]

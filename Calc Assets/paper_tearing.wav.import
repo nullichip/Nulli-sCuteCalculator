@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://elx8hlh67pv"
+path="res://.godot/imported/paper_tearing.wav-af7d1d3488e17603f6683c1b7f410d41.sample"
+
+[deps]
+
+source_file="res://Calc Assets/paper_tearing.wav"
+dest_files=["res://.godot/imported/paper_tearing.wav-af7d1d3488e17603f6683c1b7f410d41.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

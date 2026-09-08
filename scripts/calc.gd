@@ -11,6 +11,13 @@ var last_action: String = ""
 @onready var scroll_container = $BaseCalc/ScrollContainer
 @onready var cap = $AnimationPlayer
 
+@onready var click_sound = $ClickSound
+@onready var power_sound = $PowerOnSound
+@onready var power_off_sound = $PowerOffSound
+
+func _ready() -> void:
+	power_sound.play()
+
 func _on_btn_1_pressed() -> void:
 	_on_number_pressed("1")
 
@@ -51,21 +58,25 @@ func _on_btn_0_pressed() -> void:
 
 
 func _on_bt_nmult_pressed() -> void:
+	click_sound.play()
 	_on_number_pressed("x")
 	last_action = "multiply"
 
 
 func _on_bt_ndiv_pressed() -> void:
+	click_sound.play()
 	_on_number_pressed("/")
 	last_action = "divide"
 
 
 func _on_bt_ndecimal_pressed() -> void:
+	click_sound.play()
 	_on_number_pressed(".")
 	last_action = "decimal"
 
 
 func _on_btnc_pressed() -> void:
+	click_sound.play()
 	current_input = ""
 	is_negative_pending = false
 	last_action = "clear"
@@ -74,16 +85,19 @@ func _on_btnc_pressed() -> void:
 
 
 func _on_bt_nsub_pressed() -> void:
+	click_sound.play()
 	_on_number_pressed("-")
 	last_action = "subtract"
 
 
 func _on_bt_nadd_pressed() -> void:
+	click_sound.play()
 	_on_number_pressed("+")
 	last_action = "add"
 
 
 func _on_bt_nequal_pressed() -> void:
+	click_sound.play()
 	if current_input == "":
 		return
 	
@@ -119,6 +133,7 @@ func _on_bt_nequal_pressed() -> void:
 	update_png_display()
 
 func _on_btnonoff_pressed() -> void:
+	power_off_sound.play()
 	cap.play("cap-on")
 	await cap.animation_finished
 	await get_tree().create_timer(0.5).timeout
@@ -126,12 +141,14 @@ func _on_btnonoff_pressed() -> void:
 
 
 func _on_c_ap_pressed() -> void:
+	click_sound.play()
 	cap.play("cap-off")
 
 
 
 #-----NUMBER SCRIPTS-----
 func _on_number_pressed(digit: String) -> void:
+	click_sound.play()
 	if last_action == "equal" and digit in ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]:
 		current_input = ""
 		is_negative_pending = false

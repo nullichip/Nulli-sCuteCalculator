@@ -3,7 +3,9 @@ extends TextureRect
 var is_dragging: bool = false
 var drag_offset: Vector2 = Vector2.ZERO
 
-var save_path: String = "user://stickers_v5.cfg" 
+var save_path: String = "user://stickers_v5.cfg"
+
+@onready var paper_sound = $"../../PaperSound"
 
 func _ready() -> void:
 	var config = ConfigFile.new()
@@ -15,6 +17,7 @@ func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		is_dragging = true
 		drag_offset = get_global_mouse_position() - global_position
+		paper_sound.play()
 
 func _input(event: InputEvent) -> void:
 	if not is_dragging:
