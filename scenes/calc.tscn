@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c84qkujpijtnk"]
+[gd_scene load_steps=33 format=3 uid="uid://c84qkujpijtnk"]
 
 [ext_resource type="Texture2D" uid="uid://cfx2nimdsi0fd" path="res://Calc Assets/Base.png" id="1_6dpbg"]
 [ext_resource type="Script" uid="uid://c13h744n8mneb" path="res://scripts/calc.gd" id="1_bhjd5"]
@@ -22,7 +22,12 @@
 [ext_resource type="Texture2D" uid="uid://cjload1h1a8em" path="res://Calc Assets/=.png" id="21_bocuy"]
 [ext_resource type="Texture2D" uid="uid://crhm5elhm6qai" path="res://Calc Assets/on& off.png" id="22_050ol"]
 [ext_resource type="Texture2D" uid="uid://rssdhuf27oq5" path="res://Calc Assets/C.png" id="22_fmorw"]
+[ext_resource type="Texture2D" uid="uid://c5t3ooiftp0ic" path="res://Calc Assets/Sticker1.png" id="24_skn22"]
 [ext_resource type="Texture2D" uid="uid://ch4edmuivwfel" path="res://Calc Assets/CAp.png" id="24_vu1ap"]
+[ext_resource type="Script" uid="uid://dtl30fssbnnjo" path="res://scripts/stickers.gd" id="25_tg61m"]
+[ext_resource type="Texture2D" uid="uid://cr1rr8mw1qqlt" path="res://Calc Assets/Sticker2.png" id="26_xqdc3"]
+[ext_resource type="Texture2D" uid="uid://deet73c5d3obb" path="res://Calc Assets/Sticker3.png" id="27_qm11l"]
+[ext_resource type="Texture2D" uid="uid://crvcssug5qvxu" path="res://Calc Assets/Sticker4.png" id="28_o5o2v"]
 
 [sub_resource type="Animation" id="Animation_vu1ap"]
 resource_name = "cap-off"
@@ -42,11 +47,11 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("..:rotation")
+tracks/1/path = NodePath("../..:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.10833333, 0.20833333, 0.31, 0.41, 0.5, 0.6, 0.7),
+"times": PackedFloat32Array(0, 0.12333331, 0.21499999, 0.31666666, 0.41, 0.5, 0.6, 0.70666665),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0052359877, -0.0052359877, 0.0052359877, -0.0052359877, 0.0052359877, -0.0052359877, 0.0]
@@ -106,6 +111,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0052359877]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_68q0n"]
 _data = {
@@ -115,6 +132,7 @@ _data = {
 }
 
 [node name="Calculator" type="Control"]
+z_index = 20
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -141,13 +159,16 @@ position = Vector2(216, 126)
 scale = Vector2(8, 8.190476)
 texture = ExtResource("3_050ol")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BaseCalc"]
-offset_left = 66.0
-offset_top = 87.0
-offset_right = 368.0
+[node name="ScrollContainer" type="ScrollContainer" parent="BaseCalc"]
+offset_left = 83.0
+offset_top = 86.0
+offset_right = 345.0
 offset_bottom = 161.0
-size_flags_horizontal = 8
-theme_override_constants/separation = 1
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BaseCalc/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 alignment = 2
 
 [node name="BTN1" type="TextureButton" parent="BaseCalc"]
@@ -333,15 +354,64 @@ texture_pressed = ExtResource("5_050ol")
 [node name="CapCalc" type="TextureRect" parent="."]
 layout_mode = 0
 rotation = 0.0052359877
+mouse_filter = 2
 
 [node name="CAp" type="TextureButton" parent="CapCalc"]
 texture_filter = 1
 layout_mode = 0
 offset_top = 1.0
 offset_right = 54.0
-offset_bottom = 94.00061
+offset_bottom = 94.00018
 scale = Vector2(8, 8)
 texture_normal = ExtResource("24_vu1ap")
+
+[node name="NameSticker" type="TextureRect" parent="CapCalc/CAp"]
+z_index = 5
+texture_filter = 1
+layout_mode = 0
+offset_left = 15.375
+offset_top = 35.0
+offset_right = 52.175003
+offset_bottom = 58.0
+mouse_filter = 0
+texture = ExtResource("24_skn22")
+script = ExtResource("25_tg61m")
+
+[node name="VBSticker" type="TextureRect" parent="CapCalc/CAp"]
+z_index = 5
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.875
+offset_top = 24.75
+offset_right = 17.875
+offset_bottom = 40.75
+mouse_filter = 0
+texture = ExtResource("26_xqdc3")
+script = ExtResource("25_tg61m")
+
+[node name="EmojiSticker" type="TextureRect" parent="CapCalc/CAp"]
+z_index = 5
+texture_filter = 1
+layout_mode = 0
+offset_left = 10.375
+offset_top = 66.125
+offset_right = 26.375
+offset_bottom = 82.465416
+mouse_filter = 0
+texture = ExtResource("27_qm11l")
+script = ExtResource("25_tg61m")
+
+[node name="BowSticker" type="TextureRect" parent="CapCalc/CAp"]
+z_index = 5
+texture_filter = 1
+layout_mode = 0
+offset_left = 21.5
+offset_top = 5.0
+offset_right = 55.0
+offset_bottom = 20.0
+mouse_filter = 0
+texture = ExtResource("28_o5o2v")
+script = ExtResource("25_tg61m")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../CapCalc/CAp")
